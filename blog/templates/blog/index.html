@@ -1,20 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
-{%block starting_page%}
+{%block title%}
 Starting_page
 {%endblock%}
 {%block css_files%}
+    <link rel="stylesheet" href="{% static "blog/posts.css"%}">
     <link rel="stylesheet" href="{% static "blog/index.css"%}">
 {%endblock%}
 
 {%block content%}
-    <header id="main-navigation">
-        <h1><a href="">Pranav's blog</a></h1>
-        <nav>
-            <a href="">All Posts</a>
-        </nav>
-    </header>
+    
     <section id="welcome">
         <header>
             <img src="{%static "blog/images/photo.png"%}"alt="Pranav-the author of this blog"/>
@@ -25,19 +21,8 @@ Starting_page
     <section id="latest-posts">
         <h2>My latest Posts</h2>
         <ul>
-            <li>
-                <article class="posts">
-                    <a href="">
-                        <img src="{%static "blog/images/mountains.jpg"%}"alt="Mountain hiking"/>
-                        <div class="post_content">
-                            <h3>Mountain Hiking</h3>
-                            <p>
-                                It was truely a overwelhming experience when i went for hiking
-                            </p>
-                        </div>
-                    </a>
-                </article>
-            </li>
+            
+            {%include "blog/includes/post.html"%}
         <ul>
     </section>
     <section id="about">
@@ -46,5 +31,5 @@ Starting_page
     </section>
 
         
-    </section>
+    
 {%endblock%}

@@ -6,11 +6,18 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{%block starting_page %}  {%endblock%}</title>
+	<title>{%block title %}  {%endblock%}</title>
 	<link rel="stylesheet" href="{% static "app.css"%}">
 	{% block css_files %}{%endblock%}
 </head>
 <body>
+	<header id="main-navigation">
+        <h1><a href="">Pranav's blog</a></h1>
+        <nav>
+            <a href="">All Posts</a>
+        </nav>
+    </header>
+	
 	{%block content%}{%endblock%}
 </body>
 </html>
